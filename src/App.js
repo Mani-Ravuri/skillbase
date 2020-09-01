@@ -21,7 +21,6 @@ function App() {
 
     <BrowserRouter >
       {/* <ScrollToTop /> */}
-        <Route path="/" exact component={Login} />
 
       <header className='main-header-grid'>
         <NavBar />
@@ -29,6 +28,8 @@ function App() {
       <Row style={{ padding: "3em 0", background: "#0000ff14" }}>
         <Col xs={{ span: 24, offset: 0 }} lg={{ span: 20, offset: 2 }} sm={{ span: 24, offset: 0 }}>
           <Switch>
+        <Route path="/" exact component={Login} />
+
             <Route path="/dashboard"  component={LandingPage} />
             <Route path="/skill/addskill"> <AddSkills /></Route>
             <Route path="/skill" > <Skills /> </Route>
