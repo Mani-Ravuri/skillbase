@@ -1,0 +1,29 @@
+.gem-main-dashboard{
+    .ProfileImageSection{
+        img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        .dougnutClass{
+            .chartjs-render-monitor{
+                width: 300px !important;
+                height: 150px !important;
+            }
+        }
+        .barchartClass{
+            .chartjs-render-monitor{
+                width: 500px !important;
+                height: 250px !important;
+            }
+        }
+        
+    }
+    .only-img{
+        display: inline-flex;
+        .profile-info{
+            margin: 0 5px;
+        }
+    }
+}
