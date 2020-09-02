@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { Button, Row, Col, Select, Form } from 'antd';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Link, useHistory } from "react-router-dom";
 import './index.scss';
 import SkillsTabel from '../../utils/tabels/Skills';
@@ -7,7 +8,9 @@ import SkillsTabel from '../../utils/tabels/Skills';
 const FormItem = Form.Item;
 const { Option } = Select;
 function Skills() {
-
+    const Skills = useSelector(state => state.AllSkills , shallowEqual);
+    const {teamMembers}  = Skills;
+console.log("Skills", teamMembers)
 const [teamtype ,setTeamType] = useState("");
 
     const teamtypeChange = (e) => {
@@ -48,7 +51,7 @@ const [teamtype ,setTeamType] = useState("");
             </Row>
             <Row style={{ marginTop: "30px" }}>
                 <Col span={24}>
-                    <SkillsTabel />
+                    <SkillsTabel data={teamMembers}/>
                 </Col>
             </Row>
         </div>

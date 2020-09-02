@@ -1,6 +1,4 @@
 import { combineReducers } from 'redux';
-// import {modalBoxReducer} from '../utils/components/modals/redux/reducer';
-// import {Home} from '../components/home/reducer';
 import {Skills} from '../components/skills/reducer';
 
 
@@ -9,9 +7,5 @@ import {Skills} from '../components/skills/reducer';
 
 
 export default combineReducers({
-   AllSkills :skills,
-//    HomePage : Home,
-//    BlogsPage    : Blogs
-
-    // trendingVideos:carouselReducer,
+   AllSkills : Skills,
 })

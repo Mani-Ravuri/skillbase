@@ -1,7 +1,16 @@
 .loginPage{
+    height: 38.5em;
+    display: grid;
+    vertical-align: middle !important;
     .login-main{
-        .login-title{
+        .logo-block{
             text-align: center;
         }
+        .login-form-block{
+            .conteactInput{
+                width: 400px;
+            }
+        }
+        
     }
 }

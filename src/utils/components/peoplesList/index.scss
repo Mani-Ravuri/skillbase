@@ -1,0 +1,55 @@
+$mobile-max: 480px;
+@mixin mobile {
+    @media screen  and (max-width: #{$mobile-max}) { // Mobile 
+        @content;
+    }
+}
+.peopleslist {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
+    
+    .image{
+        width: 5rem;
+        text-align: center;
+
+        @include mobile {
+            width: 2rem;
+        }
+    }
+    
+    .details {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        padding-left: 2rem;
+        height: 6em;
+
+        span {
+            padding: 0 1.6em;
+        }
+
+    }
+
+    .team {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+
+        :last-child {
+            font-weight: 600;
+            padding-left: .5em;
+        }
+
+        img {
+            width: 1.5em;
+            height: 1.5em;
+        }
+
+    }
+}

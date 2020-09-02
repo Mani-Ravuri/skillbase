@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Row, Col, Form, Input } from 'antd';
+import Logo from "../../../../utils/images/logo.png";
+import OfcEnv from "../../../../utils/images/ofc.jpg";
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from "react-router-dom";
 import { ExpandAltOutlined } from '@ant-design/icons';
@@ -29,17 +31,30 @@ function Login() {
         else setUserEmailError('You have entered an invalid email address!')
     }
     function loginHere() {
-
+        history.push('dashboard')
     }
+    useEffect(() => {
+        document.querySelector('.main-header-grid').classList.add('hidden');
+        document.querySelector('.App-footer').classList.add('hidden');
+
+        return () => {
+            document.querySelector('.main-header-grid').classList.remove('hidden');
+            document.querySelector('.App-footer').classList.remove('hidden');
+        }
+    }, [])
     return (
-        <div className="loginPage">
-            <p>Login</p>
+        // <div className="loginPage" style={{ backgroundImage: `linear-gradient(rgba(37, 37, 37, 0), rgba(38, 36, 43, 0.29)), url('${OfcEnv}')`, backgroundRepeat:"no-repeate" }}>
+            <div className="loginPage">
             <Row>
-                <Col span={12}>
+                <Col span={14}>
+                {/* <img src={OfcEnv} alt="logo" /> */}
+                <p></p>
                 </Col>
-                <Col span={12}>
+                <Col span={8}>
                     <div className="login-main">
-                        <h2 className="login-title">Login</h2>
+                        <div className="logo-block">
+                            <img src={Logo} alt="logo" />
+                        </div>
                         <Form className="login-form-block">
                             <Form.Item>
                                 <h4>User Name</h4>

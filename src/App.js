@@ -29,14 +29,14 @@ function App() {
         <Col xs={{ span: 24, offset: 0 }} lg={{ span: 20, offset: 2 }} sm={{ span: 24, offset: 0 }}>
           <Switch>
         <Route path="/" exact component={Login} />
-
-            <Route path="/dashboard"  component={LandingPage} />
+        <Route path="/dashboard" component={LandingPage} />
             <Route path="/skill/addskill"> <AddSkills /></Route>
             <Route path="/skill" > <Skills /> </Route>
             <Route path="/profile" > <Profile /></Route>
             <Route path="/organization/directory/people"  > <AddPeople /></Route>
             <Route path="/organization/directory" > <Directory /></Route>
             <Route path="/organization" > <Organization /></Route>
+            <Route path="/" render={(props) => redirectAuth(props)} />
           </Switch>
         </Col>
       </Row>
@@ -47,5 +47,9 @@ function App() {
 
   );
 }
-
+function redirectAuth(props) {
+  const authenticated = JSON.parse(sessionStorage.getItem('isLogged'))
+  if (authenticated) return <Redirect to="/dashboard" />
+  else return <Login {...props} />
+}
 export default App;

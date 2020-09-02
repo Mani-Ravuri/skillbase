@@ -49,62 +49,6 @@ function validateName({ target }) {
                             </Form.Item>
                         </Col>
                     </Row>
-                    <Row >
-                        <Col span={8}>
-                            <Form.Item>
-                                <h4>Your name</h4>
-                                <Input
-                                    type="text"
-                                    className="conteactInput"
-                                    value={empName}
-                                    onBlur={validateName}
-                                    onChange={(e) => { setEmpName(e.target.value); empName.length >= 3 && setEmpNameError('') }}
-                                />
-                                <span className="input-error">{empNameError || ''}</span>
-                            </Form.Item>
-                        </Col>
-                        <Col span={8}>
-                            <Form.Item>
-                                <h4>Your name</h4>
-                                <Input
-                                    type="text"
-                                    className="conteactInput"
-                                    value={empName}
-                                    onBlur={validateName}
-                                    onChange={(e) => { setEmpName(e.target.value); empName.length >= 3 && setEmpNameError('') }}
-                                />
-                                <span className="input-error">{empNameError || ''}</span>
-                            </Form.Item>
-                        </Col>
-                    </Row>
-                    <Row >
-                        <Col span={8}>
-                            <Form.Item>
-                                <h4>Your name</h4>
-                                <Input
-                                    type="text"
-                                    className="conteactInput"
-                                    value={empName}
-                                    onBlur={validateName}
-                                    onChange={(e) => { setEmpName(e.target.value); empName.length >= 3 && setEmpNameError('') }}
-                                />
-                                <span className="input-error">{empNameError || ''}</span>
-                            </Form.Item>
-                        </Col>
-                        <Col span={8}>
-                            <Form.Item>
-                                <h4>Your name</h4>
-                                <Input
-                                    type="text"
-                                    className="conteactInput"
-                                    value={empName}
-                                    onBlur={validateName}
-                                    onChange={(e) => { setEmpName(e.target.value); empName.length >= 3 && setEmpNameError('') }}
-                                />
-                                <span className="input-error">{empNameError || ''}</span>
-                            </Form.Item>
-                        </Col>
-                    </Row>
                 </Form>
             </div>
         </div>

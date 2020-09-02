@@ -1,9 +1,11 @@
-import React from 'react';
-import { Button,Table } from 'antd';
+import React,{useState} from 'react';
+import { Link, useHistory } from "react-router-dom";
+import { Button,Table,Dropdown,Menu, Icon } from 'antd';
+import {MoreOutlined } from '@ant-design/icons';
 import './index.scss';
 
-function SkillTabel() {
-
+function SkillTabel(props) {
+    const [role , setRole] = useState(true)
 // const { sortedInfo, filteredInfo } = this.state;
 // sortedInfo = sortedInfo || {};
 // filteredInfo = filteredInfo || {};
@@ -57,15 +59,33 @@ function SkillTabel() {
             key: 'actions',
         },
     ];
+
+    if (props.data.length > 0 ){
+        props.data.map((value, i) => {
+
+        })
+    }
     const data = [
         {
             key: '1',
             name: 'John Brown',
-            securityGroup:'',
-            selfAssesment: 32,
-            superAssement: 'New York No. 1 Lake Park',
-            team:'',
-            actions:''
+            securityGroup:'Geminite',
+            selfAssesment: 5,
+            superAssement: 'Over Due two days',
+            team:'Web',
+            actions: <Dropdown getPopupContainer={triggerNode => triggerNode.parentNode}
+            overlay={<Menu>
+                <Menu.Item key="0" >
+                    {role == true ? <a><Link to={{ pathname: `` }}>View</Link></a> : null}
+                </Menu.Item>
+                <Menu.Item key="1">
+                    {role == true ? <a><Link to={{ pathname: `` }} className="edittext">Edit</Link></a> : null}
+                </Menu.Item>
+            </Menu >} trigger={['click']} >
+            <a className="ant-dropdown-link" href="">
+                <span className="viewMore"><MoreOutlined /></span>
+            </a>
+        </Dropdown >
         }
     ];
     return (

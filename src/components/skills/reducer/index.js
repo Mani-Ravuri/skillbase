@@ -18,21 +18,11 @@ const INITIAL_STATE = {
 }
 
 
-export default (state = INITIAL_STATE, action) => {
+export const Skills = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'ADD_SKILL':
-      console.log('Adding skill: ' + action.text);
-      console.log('State: ' + state);
-      //let { teamMembers } = state;
+    case 'GET_SKILLSL':
 
       let newTeamMembers = [...state.teamMembers  ]
-      
-      // state.teamMembers.forEach(person => {
-      //   newTeamMembers.push({
-      //     ...person
-      //   })
-      // });
-
       newTeamMembers.forEach(newPerson => {
         newPerson.skills.push({
           id: uuid(),
