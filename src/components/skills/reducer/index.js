@@ -1,19 +1,20 @@
 import uuid from 'node-uuid';
+import * as actionTypes from '../actionTypes';
 
 
 
 const INITIAL_STATE = {
   teamMembers: [
-      {
-          id: uuid(),
-          name: 'Fred',
-          skills: [
-              { name: 'react', score: 0 },
-              { name: 'redux', score: 0 },
-              { name: 'javascript', score: 0 },
-              { name: 'C#', score: 0 }
-          ]
-      }
+    {
+      id: uuid(),
+      name: 'Fred',
+      skills: [
+        { name: 'react', score: 0 },
+        { name: 'redux', score: 0 },
+        { name: 'javascript', score: 0 },
+        { name: 'C#', score: 0 }
+      ]
+    }
   ]
 }
 
@@ -21,8 +22,7 @@ const INITIAL_STATE = {
 export const Skills = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'GET_SKILLSL':
-
-      let newTeamMembers = [...state.teamMembers  ]
+      let newTeamMembers = [...state.teamMembers]
       newTeamMembers.forEach(newPerson => {
         newPerson.skills.push({
           id: uuid(),
@@ -32,20 +32,19 @@ export const Skills = (state = INITIAL_STATE, action) => {
       });
 
       const newState = {
-        teamMembers : newTeamMembers
+        teamMembers: newTeamMembers
       }
       return newState;
-    case 'ADD_TEAMMEMBER': 
+    case 'ADD_TEAMMEMBER':
       const member = state.teamMembers[0]
-      const newMember = {...member}
+      const newMember = { ...member }
       const newSkills = [...state.teamMembers[0].skills]
       newMember.id = uuid()
       newMember.name = action.text;
       newSkills.forEach(skill => skill.score = 0)
       newMember.skills = newSkills;
-      console.log("mem name",action.text)
-      return {...state, teamMembers: [...state.teamMembers, newMember]}
-
+      console.log("mem name", action.text)
+      return { ...state, teamMembers: [...state.teamMembers, newMember] }
     case 'REMOVE_SKILL':
       return state;
 
@@ -53,3 +52,10 @@ export const Skills = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+
+
+const skills = [{
+  name: "mani",
+  maniskills: ["html","javascript","react","sass"]
+}
+]

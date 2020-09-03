@@ -83,6 +83,7 @@ function CreatePeople() {
                 </Col>
                 <Col span={12} className="sb-button">
                     <Link to="/organization/directory"><Button >Back To Directory</Button></Link>
+                    <Link to="/skill"><Button >Back To Skills</Button></Link>
                 </Col>
             </Row>
             <Row>

@@ -1,14 +1,17 @@
 import React from 'react';
 import { Layout, Menu, Button, Row, Col, Input, Alert, Dropdown, message } from 'antd';
-import Logo from '../../../../utils/images/logo.png'
+import Logo from '../../../../utils/images/logo.png';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+
 import './index.scss';
-import { useHistory, Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { UserOutlined, BellOutlined } from '@ant-design/icons';
 const { Header } = Layout;
 const { Search } = Input;
 
 
 function Navbar(props) {
+    const isLoggedIn  = useSelector(state => state.UserProfile.login.isLoggedIn);
     const history = useHistory();
     // console.log("props data",props)
 
@@ -23,8 +26,9 @@ function Navbar(props) {
         else Alert("Comming Soon");
     }
     const onDropdownMenuSelect = (menu) => {
-        if (menu.key === 'teams') history.push('/solutions/for-agencies')
-        else if (menu.key === 'roles') history.push('/solutions/for-creators')
+        if (menu.key === 'teams') history.push('/')
+        if (menu.key === 'assessments') history.push('/skill/self-assessment')
+        else if (menu.key === 'roles') history.push('/')
         else message.warning("COMMING SOON ...")
     }
     const onOrgDropdownMenuSelect = (menu) => {
@@ -84,7 +88,7 @@ function Navbar(props) {
                 APPRECIATIONS
                 </Menu.Item>
         </Menu >
-    )
+    )  
     return (
         <Row className="sb-header">
             <Col xs={{ span: 24, offset: 0 }} lg={{ span: 20, offset: 2 }} sm={{ span: 24, offset: 0 }}>

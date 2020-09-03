@@ -13,6 +13,7 @@ import Organization from "./components/organization";
 import Profile from "./components/profile";
 import Directory from "./components/organization/features/Directory";
 import AddPeople from "./components/organization/features/Directory/peoples/CreatePeople";
+import SelfAssessment from './components/skills/features/assessment/selfAssesment';
 
 
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/" exact component={Login} />
         <Route path="/dashboard" component={LandingPage} />
             <Route path="/skill/addskill"> <AddSkills /></Route>
+            <Route path="/skill/self-assessment"> <SelfAssessment /></Route>
             <Route path="/skill" > <Skills /> </Route>
             <Route path="/profile" > <Profile /></Route>
             <Route path="/organization/directory/people"  > <AddPeople /></Route>

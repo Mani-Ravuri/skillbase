@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { Button, Row, Col, Select, Form } from 'antd';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Link, useHistory } from "react-router-dom";
@@ -8,14 +8,14 @@ import SkillsTabel from '../../utils/tabels/Skills';
 const FormItem = Form.Item;
 const { Option } = Select;
 function Skills() {
-    const Skills = useSelector(state => state.AllSkills , shallowEqual);
-    const {teamMembers}  = Skills;
-console.log("Skills", teamMembers)
-const [teamtype ,setTeamType] = useState("");
+    const Skills = useSelector(state => state.AllSkills, shallowEqual);
+    const isLoggedIn = useSelector(state => state.UserProfile.login.isLoggedIn);
+    const { teamMembers } = Skills;
+    const [teamtype, setTeamType] = useState("");
 
     const teamtypeChange = (e) => {
         if (e !== "") this.state.errors.teamtype = ""
-        setTeamType(e )
+        setTeamType(e)
     }
     const handleChange = (value) => {
         // console.log(value);
@@ -23,7 +23,7 @@ const [teamtype ,setTeamType] = useState("");
     return (
         <div className="sb-dashboard">
             <Row>
-                <Col span={18} style={{display:'flex'}}>
+                <Col span={18} style={{ display: 'flex' }}>
                     <FormItem className="InlineFormMarginRight">
                         <Select placeholder="Select By Team" style={{ width: '250px' }}
                             getPopupContainer={triggerNode => triggerNode.parentNode}
@@ -46,12 +46,15 @@ const [teamtype ,setTeamType] = useState("");
                     </FormItem>
                 </Col>
                 <Col span={6} className="sb-create-btn">
-                    <Link to="/skill/addskill" ><Button>Add Skill</Button></Link>
+                    {
+                        isLoggedIn === "admin" ? <Link to="/organization/directory/people" ><Button>ADD PEOPLE</Button></Link> : ""
+                    }
+                    
                 </Col>
             </Row>
             <Row style={{ marginTop: "30px" }}>
                 <Col span={24}>
-                    <SkillsTabel data={teamMembers}/>
+                    <SkillsTabel data={teamMembers} />
                 </Col>
             </Row>
         </div>

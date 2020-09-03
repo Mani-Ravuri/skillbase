@@ -13,6 +13,9 @@ function validateName({ target }) {
     else if (target.value.trim().length >= 3) return null
     else setEmpNameError('you need to enter atleast 3 chares')
 }
+function addSkills () {
+    
+}
 
     return (
         <div className="add-skills-main">
@@ -24,7 +27,7 @@ function validateName({ target }) {
                     <Row >
                         <Col span={8}>
                             <Form.Item>
-                                <h4>Your name</h4>
+                                <h4>Add Skill</h4>
                                 <Input
                                     type="text"
                                     className="conteactInput"
@@ -34,22 +37,10 @@ function validateName({ target }) {
                                 />
                                 <span className="input-error">{empNameError || ''}</span>
                             </Form.Item>
-                        </Col>
-                        <Col span={8}>
-                            <Form.Item>
-                                <h4>Your name</h4>
-                                <Input
-                                    type="text"
-                                    className="conteactInput"
-                                    value={empName}
-                                    onBlur={validateName}
-                                    onChange={(e) => { setEmpName(e.target.value); empName.length >= 3 && setEmpNameError('') }}
-                                />
-                                <span className="input-error">{empNameError || ''}</span>
-                            </Form.Item>
-                        </Col>
+                        </Col>  
                     </Row>
                 </Form>
+                <Button type= "primary" onClick={addSkills}> Add</Button>
             </div>
         </div>
     );
