@@ -2,6 +2,7 @@ import React from 'react';
 import { hydrate, render } from "react-dom";
 import store from "./store";
 import './index.css';
+import "./GlobalStyle.scss";
 import { Provider } from 'react-redux';
 
 import 'antd/dist/antd.css';

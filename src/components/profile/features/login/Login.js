@@ -53,7 +53,6 @@ function Login() {
     useEffect(() => {
         document.querySelector('.main-header-grid').classList.add('hidden');
         document.querySelector('.App-footer').classList.add('hidden');
-
         return () => {
             document.querySelector('.main-header-grid').classList.remove('hidden');
             document.querySelector('.App-footer').classList.remove('hidden');

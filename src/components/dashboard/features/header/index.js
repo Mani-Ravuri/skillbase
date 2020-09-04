@@ -21,13 +21,13 @@ function Navbar(props) {
     }
     const toInternal = (menu) => {
         if (menu === 'skill') history.push('/skill');
-        if (menu === 'orga') history.push('/organization');
-        if (menu === 'profile') history.push('/profile');
-        else Alert("Comming Soon");
+        else if (menu === 'orga') history.push('/organization');
+        else if (menu === 'profile') history.push('/profile');
+        else message.warning("Comming Soon");
     }
     const onDropdownMenuSelect = (menu) => {
-        if (menu.key === 'teams') history.push('/')
-        if (menu.key === 'assessments') history.push('/skill/self-assessment')
+        if (menu.key === 'teams') history.push('/skill/teams')
+        else if (menu.key === 'assessments') history.push('/skill/self-assessment')
         else if (menu.key === 'roles') history.push('/')
         else message.warning("COMMING SOON ...")
     }

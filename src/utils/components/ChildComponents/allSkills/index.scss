@@ -1,0 +1,15 @@
+.all-skills-main{
+    .sc-card{
+        width: 200px;
+        border-radius: 10px;
+        .ant-card-body{
+            padding: .5em 1em !important;
+        }
+        .card-header{
+            text-align: center;
+        }
+        .card-footer{
+            text-align: end;
+        }
+    }
+}

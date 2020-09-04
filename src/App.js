@@ -14,6 +14,9 @@ import Profile from "./components/profile";
 import Directory from "./components/organization/features/Directory";
 import AddPeople from "./components/organization/features/Directory/peoples/CreatePeople";
 import SelfAssessment from './components/skills/features/assessment/selfAssesment';
+import Allteams from './components/skills/features/Teams/Teams';
+import InvitePeople from './components/organization/features/Directory/peoples/Invite';
+
 
 
 
@@ -33,9 +36,11 @@ function App() {
         <Route path="/dashboard" component={LandingPage} />
             <Route path="/skill/addskill"> <AddSkills /></Route>
             <Route path="/skill/self-assessment"> <SelfAssessment /></Route>
+            <Route path="/skill/teams"> <Allteams /></Route>
             <Route path="/skill" > <Skills /> </Route>
             <Route path="/profile" > <Profile /></Route>
             <Route path="/organization/directory/people"  > <AddPeople /></Route>
+            <Route path="/organization/directory/invite-people"  > <InvitePeople /></Route>
             <Route path="/organization/directory" > <Directory /></Route>
             <Route path="/organization" > <Organization /></Route>
             <Route path="/" render={(props) => redirectAuth(props)} />
